@@ -1,0 +1,28 @@
+# Xcode
+.DS_Store
+build/
+DerivedData/
+*.xcuserstate
+*.xcuserdata/
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
+
+# SwiftPM
+.build/
+Packages/
+Package.resolved
+
+# CocoaPods (если вдруг есть)
+Pods/
+*.xcworkspace
+
+# Fastlane (если вдруг)
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# Environment / secrets
+*.xcconfig
+.env
