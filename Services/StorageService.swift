@@ -17,11 +17,19 @@ struct StorageService {
 
     func loadPlans() throws -> [MealPlan] {
         guard FileManager.default.fileExists(atPath: url.path) else { return [] }
+
         do {
             let data = try Data(contentsOf: url)
+
+            // ✅ файл есть, но пустой — считаем, что истории нет
+            guard !data.isEmpty else { return [] }
+
             return try JSONDecoder().decode([MealPlan].self, from: data)
         } catch {
-            throw AppError.storage(error.localizedDescription)
+            // ✅ если файл битый — сбрасываем его, чтобы не мучил при каждом запуске
+            try? FileManager.default.removeItem(at: url)
+            return []
+            // (если хочешь наоборот видеть ошибку — можно throw AppError.storage)
         }
     }
 

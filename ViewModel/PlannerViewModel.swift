@@ -19,7 +19,9 @@ final class PlannerViewModel {
     var isLoading = false
     var appError: AppError?
 
-    let ai = OllamaAIService()
+    // let ai = OllamaAIService()
+    // Меняем на OpenAIService
+    let ai = OpenAIService()
     let mealDB = MealDBService()
     let storage = StorageService()
     
@@ -37,6 +39,26 @@ final class PlannerViewModel {
         }
     }
 
+    private func normalizeDates(_ days: [PlanDay]) -> [PlanDay] {
+        let cal = Calendar.current
+        let start = Date()
+
+        return days.enumerated().map { idx, d in
+            let date = cal.date(byAdding: .day, value: idx, to: start) ?? start
+            let iso = isoDate(date)
+            return PlanDay(id: d.id, dateISO: iso, meals: d.meals)
+        }
+    }
+
+    private func isoDate(_ date: Date) -> String {
+        let f = DateFormatter()
+        f.calendar = Calendar(identifier: .gregorian)
+        f.locale = Locale(identifier: "en_US_POSIX")
+        f.timeZone = TimeZone.current
+        f.dateFormat = "yyyy-MM-dd"
+        return f.string(from: date)
+    }
+    
     func generatePlan() async {
         appError = nil
 
@@ -52,36 +74,35 @@ final class PlannerViewModel {
         do {
             progressValue = 0.15
             progressText = "Готовим параметры плана…"
-            try? await Task.sleep(nanoseconds: 200_000_000)
+            try? await Task.sleep(nanoseconds: 150_000_000)
 
             progressValue = 0.35
-            progressText = "Генерируем план с Ollama…"
+            progressText = "Генерируем план через OpenAI…"
             let days = try await ai.generatePlan(settings: settings)
 
             progressValue = 0.70
-            progressText = "Проверяем и приводим данные…"
-            // Если у тебя нормализация дат:
-            // let normalized = normalizeDates(days, settings: settings)
+            progressText = "Приводим даты к сегодняшним…"
+            let normalized = normalizeDates(days)
 
             progressValue = 0.85
             progressText = "Сохраняем результат…"
-            currentPlan = MealPlan(settings: settings, days: days)
+            currentPlan = MealPlan(settings: settings, days: normalized)
 
             progressValue = 1.0
             progressText = "Готово ✅"
-            try? await Task.sleep(nanoseconds: 350_000_000)
+            try? await Task.sleep(nanoseconds: 250_000_000)
+
         } catch let e as AppError {
-            currentPlan = MealPlan(settings: settings, days: LocalPlanBuilder.build(settings: settings))
+            currentPlan = nil
             appError = e
-            progressText = "Ошибка, сделал базовый план"
+            progressText = "Ошибка генерации"
             progressValue = 1.0
-            try? await Task.sleep(nanoseconds: 500_000_000)
+
         } catch {
-            currentPlan = MealPlan(settings: settings, days: LocalPlanBuilder.build(settings: settings))
+            currentPlan = nil
             appError = .network(error.localizedDescription)
-            progressText = "Ошибка сети, сделал базовый план"
+            progressText = "Ошибка сети"
             progressValue = 1.0
-            try? await Task.sleep(nanoseconds: 500_000_000)
         }
     }
 
