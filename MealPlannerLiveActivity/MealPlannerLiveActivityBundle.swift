@@ -11,7 +11,8 @@ import SwiftUI
 @main
 struct MealPlannerLiveActivityBundle: WidgetBundle {
     var body: some Widget {
-        MealPlannerLiveActivity()
+        MealPlannerLiveActivityWidget()
+        // Оставь эти два только если они реально существуют в проекте
         MealPlannerLiveActivityControl()
         MealPlannerLiveActivityLiveActivity()
     }

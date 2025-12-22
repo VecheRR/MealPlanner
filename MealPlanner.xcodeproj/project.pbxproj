@@ -6,14 +6,114 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		86EF89D62EF6B09500E4167E /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF89CA2EF6AF8C00E4167E /* AppError.swift */; };
+		86EF89D72EF6B09A00E4167E /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF89C92EF6AF8500E4167E /* Models.swift */; };
+		86EF89D82EF6B09F00E4167E /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF89CE2EF6AFB200E4167E /* StorageService.swift */; };
+		86EF89D92EF6B0A700E4167E /* OpenAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF89CC2EF6AF9E00E4167E /* OpenAIService.swift */; };
+		86EF89DA2EF6B0AC00E4167E /* MealDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF89CD2EF6AFA900E4167E /* MealDBService.swift */; };
+		86EF89DB2EF6B0B100E4167E /* PlannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF89D02EF6AFC600E4167E /* PlannerViewModel.swift */; };
+		86EF89DC2EF6B0B500E4167E /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF89D22EF6AFD800E4167E /* SetupView.swift */; };
+		86EF89DD2EF6B0B900E4167E /* PlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF89D32EF6AFE700E4167E /* PlanView.swift */; };
+		86EF89DE2EF6B0BC00E4167E /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF89D42EF6AFF400E4167E /* HistoryView.swift */; };
+		86EF89DF2EF6B0C000E4167E /* RecipeListSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF89D52EF6AFFF00E4167E /* RecipeListSheet.swift */; };
+		86EF89E32EF6BB2800E4167E /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF89E22EF6BB2400E4167E /* AppConfig.swift */; };
+		86EF89E52EF6BC7800E4167E /* PlanDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF89E42EF6BC7500E4167E /* PlanDay.swift */; };
+		86EF89E72EF6DDA200E4167E /* MealPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF89E62EF6DD9D00E4167E /* MealPlan.swift */; };
+		86EF89E92EF6F6C400E4167E /* OllamaAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF89E82EF6F6BC00E4167E /* OllamaAIService.swift */; };
+		86EF89EB2EF6F73F00E4167E /* LocalPlanBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF89EA2EF6F73600E4167E /* LocalPlanBuilder.swift */; };
+		86EF89F32EF6FBFA00E4167E /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86EF89F22EF6FBFA00E4167E /* WidgetKit.framework */; };
+		86EF89F52EF6FBFA00E4167E /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86EF89F42EF6FBFA00E4167E /* SwiftUI.framework */; };
+		86EF8A062EF6FBFC00E4167E /* MealPlannerLiveActivityExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 86EF89F02EF6FBFA00E4167E /* MealPlannerLiveActivityExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		86EF8A0D2EF6FC3800E4167E /* MealPlanActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF8A0C2EF6FC2900E4167E /* MealPlanActivityAttributes.swift */; };
+		86EF8A0E2EF6FC4F00E4167E /* MealPlanActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF8A0C2EF6FC2900E4167E /* MealPlanActivityAttributes.swift */; };
+		86EF8A102EF6FC6C00E4167E /* LiveActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF8A0F2EF6FC6200E4167E /* LiveActivityManager.swift */; };
+		86EF8A132EF7072200E4167E /* GenerationOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF8A122EF7070900E4167E /* GenerationOverlay.swift */; };
+		86EF8A152EF7095E00E4167E /* CalorieCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF8A142EF7095600E4167E /* CalorieCalculator.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		86EF8A042EF6FBFC00E4167E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86EF89B22EF6AF3700E4167E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86EF89EF2EF6FBFA00E4167E;
+			remoteInfo = MealPlannerLiveActivityExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		86EF8A0B2EF6FBFC00E4167E /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				86EF8A062EF6FBFC00E4167E /* MealPlannerLiveActivityExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		86EF89BA2EF6AF3800E4167E /* MealPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		86EF89C92EF6AF8500E4167E /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		86EF89CA2EF6AF8C00E4167E /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		86EF89CC2EF6AF9E00E4167E /* OpenAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIService.swift; sourceTree = "<group>"; };
+		86EF89CD2EF6AFA900E4167E /* MealDBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDBService.swift; sourceTree = "<group>"; };
+		86EF89CE2EF6AFB200E4167E /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		86EF89D02EF6AFC600E4167E /* PlannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerViewModel.swift; sourceTree = "<group>"; };
+		86EF89D22EF6AFD800E4167E /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
+		86EF89D32EF6AFE700E4167E /* PlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanView.swift; sourceTree = "<group>"; };
+		86EF89D42EF6AFF400E4167E /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		86EF89D52EF6AFFF00E4167E /* RecipeListSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListSheet.swift; sourceTree = "<group>"; };
+		86EF89E22EF6BB2400E4167E /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		86EF89E42EF6BC7500E4167E /* PlanDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDay.swift; sourceTree = "<group>"; };
+		86EF89E62EF6DD9D00E4167E /* MealPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlan.swift; sourceTree = "<group>"; };
+		86EF89E82EF6F6BC00E4167E /* OllamaAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OllamaAIService.swift; sourceTree = "<group>"; };
+		86EF89EA2EF6F73600E4167E /* LocalPlanBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPlanBuilder.swift; sourceTree = "<group>"; };
+		86EF89F02EF6FBFA00E4167E /* MealPlannerLiveActivityExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MealPlannerLiveActivityExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		86EF89F22EF6FBFA00E4167E /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		86EF89F42EF6FBFA00E4167E /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		86EF8A0C2EF6FC2900E4167E /* MealPlanActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanActivityAttributes.swift; sourceTree = "<group>"; };
+		86EF8A0F2EF6FC6200E4167E /* LiveActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityManager.swift; sourceTree = "<group>"; };
+		86EF8A122EF7070900E4167E /* GenerationOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerationOverlay.swift; sourceTree = "<group>"; };
+		86EF8A142EF7095600E4167E /* CalorieCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieCalculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		86EF89E12EF6B8BE00E4167E /* Exceptions for "MealPlanner" folder in "MealPlanner" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 86EF89B92EF6AF3800E4167E /* MealPlanner */;
+		};
+		86EF8A0A2EF6FBFC00E4167E /* Exceptions for "MealPlannerLiveActivity" folder in "MealPlannerLiveActivityExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 86EF89EF2EF6FBFA00E4167E /* MealPlannerLiveActivityExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		86EF89BC2EF6AF3800E4167E /* MealPlanner */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				86EF89E12EF6B8BE00E4167E /* Exceptions for "MealPlanner" folder in "MealPlanner" target */,
+			);
 			path = MealPlanner;
+			sourceTree = "<group>";
+		};
+		86EF89F62EF6FBFA00E4167E /* MealPlannerLiveActivity */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				86EF8A0A2EF6FBFC00E4167E /* Exceptions for "MealPlannerLiveActivity" folder in "MealPlannerLiveActivityExtension" target */,
+			);
+			path = MealPlannerLiveActivity;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -26,13 +126,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		86EF89ED2EF6FBFA00E4167E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86EF89F52EF6FBFA00E4167E /* SwiftUI.framework in Frameworks */,
+				86EF89F32EF6FBFA00E4167E /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		86EF89B12EF6AF3700E4167E = {
 			isa = PBXGroup;
 			children = (
+				86EF8A112EF7070200E4167E /* UI */,
+				86EF89D12EF6AFD100E4167E /* Screens */,
+				86EF89CF2EF6AFBD00E4167E /* ViewModel */,
+				86EF89CB2EF6AF9600E4167E /* Services */,
+				86EF89C82EF6AF7D00E4167E /* Core */,
 				86EF89BC2EF6AF3800E4167E /* MealPlanner */,
+				86EF89F62EF6FBFA00E4167E /* MealPlannerLiveActivity */,
+				86EF89F12EF6FBFA00E4167E /* Frameworks */,
 				86EF89BB2EF6AF3800E4167E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,8 +157,72 @@
 			isa = PBXGroup;
 			children = (
 				86EF89BA2EF6AF3800E4167E /* MealPlanner.app */,
+				86EF89F02EF6FBFA00E4167E /* MealPlannerLiveActivityExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		86EF89C82EF6AF7D00E4167E /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				86EF8A142EF7095600E4167E /* CalorieCalculator.swift */,
+				86EF8A0C2EF6FC2900E4167E /* MealPlanActivityAttributes.swift */,
+				86EF89EA2EF6F73600E4167E /* LocalPlanBuilder.swift */,
+				86EF89E62EF6DD9D00E4167E /* MealPlan.swift */,
+				86EF89E42EF6BC7500E4167E /* PlanDay.swift */,
+				86EF89E22EF6BB2400E4167E /* AppConfig.swift */,
+				86EF89CA2EF6AF8C00E4167E /* AppError.swift */,
+				86EF89C92EF6AF8500E4167E /* Models.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		86EF89CB2EF6AF9600E4167E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				86EF8A0F2EF6FC6200E4167E /* LiveActivityManager.swift */,
+				86EF89E82EF6F6BC00E4167E /* OllamaAIService.swift */,
+				86EF89CE2EF6AFB200E4167E /* StorageService.swift */,
+				86EF89CD2EF6AFA900E4167E /* MealDBService.swift */,
+				86EF89CC2EF6AF9E00E4167E /* OpenAIService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		86EF89CF2EF6AFBD00E4167E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				86EF89D02EF6AFC600E4167E /* PlannerViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		86EF89D12EF6AFD100E4167E /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				86EF89D52EF6AFFF00E4167E /* RecipeListSheet.swift */,
+				86EF89D42EF6AFF400E4167E /* HistoryView.swift */,
+				86EF89D32EF6AFE700E4167E /* PlanView.swift */,
+				86EF89D22EF6AFD800E4167E /* SetupView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		86EF89F12EF6FBFA00E4167E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				86EF89F22EF6FBFA00E4167E /* WidgetKit.framework */,
+				86EF89F42EF6FBFA00E4167E /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		86EF8A112EF7070200E4167E /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				86EF8A122EF7070900E4167E /* GenerationOverlay.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -55,10 +235,12 @@
 				86EF89B62EF6AF3800E4167E /* Sources */,
 				86EF89B72EF6AF3800E4167E /* Frameworks */,
 				86EF89B82EF6AF3800E4167E /* Resources */,
+				86EF8A0B2EF6FBFC00E4167E /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				86EF8A052EF6FBFC00E4167E /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				86EF89BC2EF6AF3800E4167E /* MealPlanner */,
@@ -69,6 +251,28 @@
 			productName = MealPlanner;
 			productReference = 86EF89BA2EF6AF3800E4167E /* MealPlanner.app */;
 			productType = "com.apple.product-type.application";
+		};
+		86EF89EF2EF6FBFA00E4167E /* MealPlannerLiveActivityExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 86EF8A072EF6FBFC00E4167E /* Build configuration list for PBXNativeTarget "MealPlannerLiveActivityExtension" */;
+			buildPhases = (
+				86EF89EC2EF6FBFA00E4167E /* Sources */,
+				86EF89ED2EF6FBFA00E4167E /* Frameworks */,
+				86EF89EE2EF6FBFA00E4167E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				86EF89F62EF6FBFA00E4167E /* MealPlannerLiveActivity */,
+			);
+			name = MealPlannerLiveActivityExtension;
+			packageProductDependencies = (
+			);
+			productName = MealPlannerLiveActivityExtension;
+			productReference = 86EF89F02EF6FBFA00E4167E /* MealPlannerLiveActivityExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -81,6 +285,9 @@
 				LastUpgradeCheck = 2610;
 				TargetAttributes = {
 					86EF89B92EF6AF3800E4167E = {
+						CreatedOnToolsVersion = 26.1.1;
+					};
+					86EF89EF2EF6FBFA00E4167E = {
 						CreatedOnToolsVersion = 26.1.1;
 					};
 				};
@@ -100,12 +307,20 @@
 			projectRoot = "";
 			targets = (
 				86EF89B92EF6AF3800E4167E /* MealPlanner */,
+				86EF89EF2EF6FBFA00E4167E /* MealPlannerLiveActivityExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		86EF89B82EF6AF3800E4167E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86EF89EE2EF6FBFA00E4167E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -119,10 +334,45 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86EF89E72EF6DDA200E4167E /* MealPlan.swift in Sources */,
+				86EF8A152EF7095E00E4167E /* CalorieCalculator.swift in Sources */,
+				86EF89E92EF6F6C400E4167E /* OllamaAIService.swift in Sources */,
+				86EF8A102EF6FC6C00E4167E /* LiveActivityManager.swift in Sources */,
+				86EF89DA2EF6B0AC00E4167E /* MealDBService.swift in Sources */,
+				86EF89DF2EF6B0C000E4167E /* RecipeListSheet.swift in Sources */,
+				86EF89D82EF6B09F00E4167E /* StorageService.swift in Sources */,
+				86EF89EB2EF6F73F00E4167E /* LocalPlanBuilder.swift in Sources */,
+				86EF89DC2EF6B0B500E4167E /* SetupView.swift in Sources */,
+				86EF89DE2EF6B0BC00E4167E /* HistoryView.swift in Sources */,
+				86EF89D62EF6B09500E4167E /* AppError.swift in Sources */,
+				86EF8A132EF7072200E4167E /* GenerationOverlay.swift in Sources */,
+				86EF89DB2EF6B0B100E4167E /* PlannerViewModel.swift in Sources */,
+				86EF8A0D2EF6FC3800E4167E /* MealPlanActivityAttributes.swift in Sources */,
+				86EF89D72EF6B09A00E4167E /* Models.swift in Sources */,
+				86EF89E32EF6BB2800E4167E /* AppConfig.swift in Sources */,
+				86EF89D92EF6B0A700E4167E /* OpenAIService.swift in Sources */,
+				86EF89DD2EF6B0B900E4167E /* PlanView.swift in Sources */,
+				86EF89E52EF6BC7800E4167E /* PlanDay.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86EF89EC2EF6FBFA00E4167E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86EF8A0E2EF6FC4F00E4167E /* MealPlanActivityAttributes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		86EF8A052EF6FBFC00E4167E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86EF89EF2EF6FBFA00E4167E /* MealPlannerLiveActivityExtension */;
+			targetProxy = 86EF8A042EF6FBFC00E4167E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		86EF89C32EF6AF3900E4167E /* Debug */ = {
@@ -256,11 +506,15 @@
 				DEVELOPMENT_TEAM = H49G8BG8ZM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MealPlanner/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Meal Planner";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -288,11 +542,15 @@
 				DEVELOPMENT_TEAM = H49G8BG8ZM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MealPlanner/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Meal Planner";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -303,6 +561,66 @@
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		86EF8A082EF6FBFC00E4167E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H49G8BG8ZM;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MealPlannerLiveActivity/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MealPlannerLiveActivity;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = vecher.MealPlanner.MealPlannerLiveActivity;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		86EF8A092EF6FBFC00E4167E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H49G8BG8ZM;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MealPlannerLiveActivity/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MealPlannerLiveActivity;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = vecher.MealPlanner.MealPlannerLiveActivity;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
@@ -327,6 +645,15 @@
 			buildConfigurations = (
 				86EF89C62EF6AF3900E4167E /* Debug */,
 				86EF89C72EF6AF3900E4167E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		86EF8A072EF6FBFC00E4167E /* Build configuration list for PBXNativeTarget "MealPlannerLiveActivityExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86EF8A082EF6FBFC00E4167E /* Debug */,
+				86EF8A092EF6FBFC00E4167E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
