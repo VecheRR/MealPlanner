@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		865BB3D22EF982C500D3B785 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 865BB3D12EF982C500D3B785 /* Config.xcconfig */; };
 		86EF89D62EF6B09500E4167E /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF89CA2EF6AF8C00E4167E /* AppError.swift */; };
 		86EF89D72EF6B09A00E4167E /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF89C92EF6AF8500E4167E /* Models.swift */; };
 		86EF89D82EF6B09F00E4167E /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF89CE2EF6AFB200E4167E /* StorageService.swift */; };
@@ -57,6 +58,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		865BB3D12EF982C500D3B785 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		86EF89BA2EF6AF3800E4167E /* MealPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86EF89C92EF6AF8500E4167E /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		86EF89CA2EF6AF8C00E4167E /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 		86EF89B12EF6AF3700E4167E = {
 			isa = PBXGroup;
 			children = (
+				865BB3D12EF982C500D3B785 /* Config.xcconfig */,
 				86EF8A112EF7070200E4167E /* UI */,
 				86EF89D12EF6AFD100E4167E /* Screens */,
 				86EF89CF2EF6AFBD00E4167E /* ViewModel */,
@@ -317,6 +320,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				865BB3D22EF982C500D3B785 /* Config.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +381,7 @@
 /* Begin XCBuildConfiguration section */
 		86EF89C32EF6AF3900E4167E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 865BB3D12EF982C500D3B785 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -441,6 +446,7 @@
 		};
 		86EF89C42EF6AF3900E4167E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 865BB3D12EF982C500D3B785 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -508,6 +514,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MealPlanner/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Meal Planner";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -544,6 +551,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MealPlanner/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Meal Planner";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
