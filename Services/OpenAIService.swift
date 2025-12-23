@@ -9,6 +9,7 @@ import Foundation
 
 struct OpenAIService {
     private let apiKey = AppConfig.openAIKey
+    private let http = HTTPClient(policy: .init(maxAttempts: 5, baseDelay: 0.6, maxDelay: 8.0))
 
     private struct ChatRequest: Codable {
         struct Message: Codable {
@@ -44,59 +45,59 @@ struct OpenAIService {
 
     // Генерим дни плана, которые потом кладём в MealPlan
     func generatePlan(settings: PlannerSettings) async throws -> [PlanDay] {
-        let prompt = buildPrompt(settings: settings)
+            let prompt = buildPrompt(settings: settings)
 
-        let reqBody = ChatRequest(
-            model: "gpt-4o-mini",
-            temperature: 0,
-            messages: [
-                .init(role: "system", content: "You output ONLY valid JSON. No markdown. No comments."),
-                .init(role: "user", content: prompt)
-            ],
-            response_format: .init(type: "json_object")
-        )
+            let reqBody = ChatRequest(
+                model: "gpt-4o-mini",
+                temperature: 0,
+                messages: [
+                    .init(role: "system", content: "You output ONLY valid JSON. No markdown. No comments."),
+                    .init(role: "user", content: prompt)
+                ],
+                response_format: .init(type: "json_object")
+            )
 
-        guard let url = URL(string: "https://api.openai.com/v1/chat/completions") else {
-            throw AppError.network("Bad URL")
-        }
+            guard let url = URL(string: "https://api.openai.com/v1/chat/completions") else {
+                throw AppError.network("Bad URL")
+            }
 
-        var req = URLRequest(url: url)
-        req.httpMethod = "POST"
-        req.setValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization")
-        req.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        req.httpBody = try JSONEncoder().encode(reqBody)
+            var req = URLRequest(url: url)
+            req.httpMethod = "POST"
+            req.setValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization")
+            req.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            req.httpBody = try JSONEncoder().encode(reqBody)
+            req.timeoutInterval = 60
 
-        let (data, resp) = try await URLSession.shared.data(for: req)
-        guard let http = resp as? HTTPURLResponse else { throw AppError.badResponse }
+            let (data, httpResp) = try await http.request(req)
 
-        guard http.statusCode == 200 else {
-            if let env = try? JSONDecoder().decode(OpenAIErrorEnvelope.self, from: data) {
-                // Приведём к нормальной форме
-                if env.error.code == "insufficient_quota" {
-                    throw AppError.network("OpenAI: нет квоты. Подключи биллинг/пополни баланс в OpenAI Platform.")
+            guard httpResp.statusCode == 200 else {
+                // Попробуем красиво вытащить сообщение от OpenAI
+                if let env = try? JSONDecoder().decode(OpenAIErrorEnvelope.self, from: data) {
+                    if env.error.code == "insufficient_quota" {
+                        throw AppError.network("OpenAI: нет квоты. Подключи биллинг/пополни баланс в OpenAI Platform.")
+                    } else {
+                        // 429 / 5xx сюда тоже попадут, но retry уже был сделан HTTPClient’ом
+                        throw AppError.network("OpenAI (\(httpResp.statusCode)): \(env.error.message)")
+                    }
                 } else {
-                    throw AppError.network("OpenAI: \(env.error.message)")
+                    throw AppError.network("OpenAI HTTP \(httpResp.statusCode)")
                 }
-            } else {
-                throw AppError.network("OpenAI HTTP \(http.statusCode)")
+            }
+
+            let decoded = try JSONDecoder().decode(ChatResponse.self, from: data)
+            guard let content = decoded.choices.first?.message.content else {
+                throw AppError.aiInvalid("Empty response")
+            }
+
+            struct Payload: Codable { let days: [PlanDay] }
+            do {
+                let payload = try JSONDecoder().decode(Payload.self, from: Data(content.utf8))
+                validate(payload.days, settings: settings)
+                return payload.days
+            } catch {
+                throw AppError.aiInvalid("Bad JSON: \(error.localizedDescription)\n\(content)")
             }
         }
-
-        let decoded = try JSONDecoder().decode(ChatResponse.self, from: data)
-        guard let content = decoded.choices.first?.message.content else {
-            throw AppError.aiInvalid("Empty response")
-        }
-
-        // Content должен быть JSON-объектом { "days": [...] }
-        struct Payload: Codable { let days: [PlanDay] }
-        do {
-            let payload = try JSONDecoder().decode(Payload.self, from: Data(content.utf8))
-            validate(payload.days, settings: settings)
-            return payload.days
-        } catch {
-            throw AppError.aiInvalid("Bad JSON: \(error.localizedDescription)\n\(content)")
-        }
-    }
 
     private func buildPrompt(settings: PlannerSettings) -> String {
         let goal = settings.goal.title

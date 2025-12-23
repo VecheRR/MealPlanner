@@ -25,6 +25,8 @@ struct MealDBService {
         let meals: [MealDBMeal]?
     }
 
+    private let http = HTTPClient(policy: .init(maxAttempts: 4, baseDelay: 0.4, maxDelay: 6.0))
+
     func searchMeals(query: String) async throws -> [MealDBMeal] {
         let q = query.trimmingCharacters(in: .whitespacesAndNewlines)
         if q.isEmpty { return [] }
@@ -33,15 +35,21 @@ struct MealDBService {
         comps.queryItems = [URLQueryItem(name: "s", value: q)]
         guard let url = comps.url else { throw AppError.network("Bad URL") }
 
+        var req = URLRequest(url: url)
+        req.httpMethod = "GET"
+        req.timeoutInterval = 30
+
+        let (data, resp) = try await http.request(req)
+
+        guard resp.statusCode == 200 else {
+            throw AppError.network("TheMealDB HTTP \(resp.statusCode)")
+        }
+
         do {
-            let (data, resp) = try await URLSession.shared.data(from: url)
-            guard (resp as? HTTPURLResponse)?.statusCode == 200 else { throw AppError.badResponse }
             let decoded = try JSONDecoder().decode(SearchResponse.self, from: data)
             return decoded.meals ?? []
-        } catch let e as AppError {
-            throw e
         } catch {
-            throw AppError.network(error.localizedDescription)
+            throw AppError.decode(error.localizedDescription)
         }
     }
 }
