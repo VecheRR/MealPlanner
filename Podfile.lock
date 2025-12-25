@@ -1,0 +1,229 @@
+PODS:
+  - AppMetricaCore (5.15.0):
+    - AppMetricaCoreUtils (= 5.15.0)
+    - AppMetricaEncodingUtils (= 5.15.0)
+    - AppMetricaFMDB (= 5.15.0)
+    - AppMetricaHostState (= 5.15.0)
+    - AppMetricaIdentifiers (= 5.15.0)
+    - AppMetricaKeychain (= 5.15.0)
+    - AppMetricaLog (= 5.15.0)
+    - AppMetricaNetwork (= 5.15.0)
+    - AppMetricaPlatform (= 5.15.0)
+    - AppMetricaProtobuf (= 5.15.0)
+    - AppMetricaProtobufUtils (= 5.15.0)
+    - AppMetricaStorageUtils (= 5.15.0)
+  - AppMetricaCoreUtils (5.15.0):
+    - AppMetricaLog (= 5.15.0)
+  - AppMetricaEncodingUtils (5.15.0):
+    - AppMetricaCoreUtils (= 5.15.0)
+    - AppMetricaLog (= 5.15.0)
+    - AppMetricaPlatform (= 5.15.0)
+  - AppMetricaFMDB (5.15.0)
+  - AppMetricaHostState (5.15.0):
+    - AppMetricaCoreUtils (= 5.15.0)
+    - AppMetricaLog (= 5.15.0)
+  - AppMetricaIdentifiers (5.15.0):
+    - AppMetricaKeychain (= 5.15.0)
+    - AppMetricaLogSwift (= 5.15.0)
+    - AppMetricaPlatform (= 5.15.0)
+    - AppMetricaStorageUtils (= 5.15.0)
+    - AppMetricaSynchronization (= 5.15.0)
+  - AppMetricaKeychain (5.15.0):
+    - AppMetricaCoreUtils (= 5.15.0)
+    - AppMetricaLog (= 5.15.0)
+    - AppMetricaStorageUtils (= 5.15.0)
+  - AppMetricaLog (5.15.0)
+  - AppMetricaLogSwift (5.15.0):
+    - AppMetricaLog (= 5.15.0)
+  - AppMetricaNetwork (5.15.0):
+    - AppMetricaCoreUtils (= 5.15.0)
+    - AppMetricaLog (= 5.15.0)
+    - AppMetricaPlatform (= 5.15.0)
+  - AppMetricaPlatform (5.15.0):
+    - AppMetricaCoreUtils (= 5.15.0)
+    - AppMetricaLog (= 5.15.0)
+  - AppMetricaProtobuf (5.15.0)
+  - AppMetricaProtobufUtils (5.15.0):
+    - AppMetricaProtobuf (= 5.15.0)
+  - AppMetricaStorageUtils (5.15.0):
+    - AppMetricaCoreUtils (= 5.15.0)
+    - AppMetricaLog (= 5.15.0)
+  - AppMetricaSynchronization (5.15.0):
+    - AppMetricaLogSwift (= 5.15.0)
+  - AppsFlyerFramework (6.17.8):
+    - AppsFlyerFramework/Main (= 6.17.8)
+  - AppsFlyerFramework/Main (6.17.8)
+  - Firebase/Analytics (11.15.0):
+    - Firebase/Core
+  - Firebase/Core (11.15.0):
+    - Firebase/CoreOnly
+    - FirebaseAnalytics (~> 11.15.0)
+  - Firebase/CoreOnly (11.15.0):
+    - FirebaseCore (~> 11.15.0)
+  - FirebaseAnalytics (11.15.0):
+    - FirebaseAnalytics/Default (= 11.15.0)
+    - FirebaseCore (~> 11.15.0)
+    - FirebaseInstallations (~> 11.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 8.1)
+    - GoogleUtilities/MethodSwizzler (~> 8.1)
+    - GoogleUtilities/Network (~> 8.1)
+    - "GoogleUtilities/NSData+zlib (~> 8.1)"
+    - nanopb (~> 3.30910.0)
+  - FirebaseAnalytics/Default (11.15.0):
+    - FirebaseCore (~> 11.15.0)
+    - FirebaseInstallations (~> 11.0)
+    - GoogleAppMeasurement/Default (= 11.15.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 8.1)
+    - GoogleUtilities/MethodSwizzler (~> 8.1)
+    - GoogleUtilities/Network (~> 8.1)
+    - "GoogleUtilities/NSData+zlib (~> 8.1)"
+    - nanopb (~> 3.30910.0)
+  - FirebaseCore (11.15.0):
+    - FirebaseCoreInternal (~> 11.15.0)
+    - GoogleUtilities/Environment (~> 8.1)
+    - GoogleUtilities/Logger (~> 8.1)
+  - FirebaseCoreInternal (11.15.0):
+    - "GoogleUtilities/NSData+zlib (~> 8.1)"
+  - FirebaseInstallations (11.15.0):
+    - FirebaseCore (~> 11.15.0)
+    - GoogleUtilities/Environment (~> 8.1)
+    - GoogleUtilities/UserDefaults (~> 8.1)
+    - PromisesObjC (~> 2.4)
+  - GoogleAdsOnDeviceConversion (2.1.0):
+    - GoogleUtilities/Logger (~> 8.1)
+    - GoogleUtilities/Network (~> 8.1)
+    - nanopb (~> 3.30910.0)
+  - GoogleAppMeasurement/Core (11.15.0):
+    - GoogleUtilities/AppDelegateSwizzler (~> 8.1)
+    - GoogleUtilities/MethodSwizzler (~> 8.1)
+    - GoogleUtilities/Network (~> 8.1)
+    - "GoogleUtilities/NSData+zlib (~> 8.1)"
+    - nanopb (~> 3.30910.0)
+  - GoogleAppMeasurement/Default (11.15.0):
+    - GoogleAdsOnDeviceConversion (= 2.1.0)
+    - GoogleAppMeasurement/Core (= 11.15.0)
+    - GoogleAppMeasurement/IdentitySupport (= 11.15.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 8.1)
+    - GoogleUtilities/MethodSwizzler (~> 8.1)
+    - GoogleUtilities/Network (~> 8.1)
+    - "GoogleUtilities/NSData+zlib (~> 8.1)"
+    - nanopb (~> 3.30910.0)
+  - GoogleAppMeasurement/IdentitySupport (11.15.0):
+    - GoogleAppMeasurement/Core (= 11.15.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 8.1)
+    - GoogleUtilities/MethodSwizzler (~> 8.1)
+    - GoogleUtilities/Network (~> 8.1)
+    - "GoogleUtilities/NSData+zlib (~> 8.1)"
+    - nanopb (~> 3.30910.0)
+  - GoogleUtilities/AppDelegateSwizzler (8.1.0):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Network
+    - GoogleUtilities/Privacy
+  - GoogleUtilities/Environment (8.1.0):
+    - GoogleUtilities/Privacy
+  - GoogleUtilities/Logger (8.1.0):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Privacy
+  - GoogleUtilities/MethodSwizzler (8.1.0):
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Privacy
+  - GoogleUtilities/Network (8.1.0):
+    - GoogleUtilities/Logger
+    - "GoogleUtilities/NSData+zlib"
+    - GoogleUtilities/Privacy
+    - GoogleUtilities/Reachability
+  - "GoogleUtilities/NSData+zlib (8.1.0)":
+    - GoogleUtilities/Privacy
+  - GoogleUtilities/Privacy (8.1.0)
+  - GoogleUtilities/Reachability (8.1.0):
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Privacy
+  - GoogleUtilities/UserDefaults (8.1.0):
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Privacy
+  - IronSourceAdQualitySDK (9.1.1)
+  - IronSourceSDK (9.2.0.0):
+    - IronSourceSDK/AdQuality (= 9.2.0.0)
+    - IronSourceSDK/Ads (= 9.2.0.0)
+  - IronSourceSDK/AdQuality (9.2.0.0):
+    - IronSourceAdQualitySDK (~> 9.1.1)
+  - IronSourceSDK/Ads (9.2.0.0)
+  - nanopb (3.30910.0):
+    - nanopb/decode (= 3.30910.0)
+    - nanopb/encode (= 3.30910.0)
+  - nanopb/decode (3.30910.0)
+  - nanopb/encode (3.30910.0)
+  - PromisesObjC (2.4.0)
+
+DEPENDENCIES:
+  - AppMetricaCore
+  - AppsFlyerFramework
+  - Firebase/Analytics
+  - Firebase/Core
+  - IronSourceSDK
+
+SPEC REPOS:
+  trunk:
+    - AppMetricaCore
+    - AppMetricaCoreUtils
+    - AppMetricaEncodingUtils
+    - AppMetricaFMDB
+    - AppMetricaHostState
+    - AppMetricaIdentifiers
+    - AppMetricaKeychain
+    - AppMetricaLog
+    - AppMetricaLogSwift
+    - AppMetricaNetwork
+    - AppMetricaPlatform
+    - AppMetricaProtobuf
+    - AppMetricaProtobufUtils
+    - AppMetricaStorageUtils
+    - AppMetricaSynchronization
+    - AppsFlyerFramework
+    - Firebase
+    - FirebaseAnalytics
+    - FirebaseCore
+    - FirebaseCoreInternal
+    - FirebaseInstallations
+    - GoogleAdsOnDeviceConversion
+    - GoogleAppMeasurement
+    - GoogleUtilities
+    - IronSourceAdQualitySDK
+    - IronSourceSDK
+    - nanopb
+    - PromisesObjC
+
+SPEC CHECKSUMS:
+  AppMetricaCore: 335edc5051c389efae0b4eed742dc8e6a2a20cca
+  AppMetricaCoreUtils: e4b3a0cf5172d07f80aa27afe81b22cb503e5b1b
+  AppMetricaEncodingUtils: 83e3190cdc7bd35886a8ce9bad0fb06a1167b2b1
+  AppMetricaFMDB: 2b2aa256329cd91eb30028e38926c5cedf3b4d23
+  AppMetricaHostState: 31668658618690ad965e0b541f9a04e643598f97
+  AppMetricaIdentifiers: 6ac4718be8e4cb339fb7ad5d93b626be4bc9f4f5
+  AppMetricaKeychain: 734e29550fb2bb289bf911f7f26766a7530c5dd4
+  AppMetricaLog: 5b2ee136246a3056a0b96126bace4208627880c3
+  AppMetricaLogSwift: b994328ab290ae4752b7e8dc6c3460b5e9ae9e10
+  AppMetricaNetwork: c1ba532e5701d312872765fe4b52130020ff24e4
+  AppMetricaPlatform: 2721f447fff64101da2603f8cd35b5b8cc0042b5
+  AppMetricaProtobuf: 673e132fa8cb5bdf0939335196fb876a5a39ba17
+  AppMetricaProtobufUtils: e02dd2b4fdde675f67d69b9ba2c531f6e777bb7b
+  AppMetricaStorageUtils: 9017d6d7b139a05fe9e9a59e6c944f3c5d882383
+  AppMetricaSynchronization: 89023e0477f5d597d2530b8ff7f858e34c652f17
+  AppsFlyerFramework: 63577b60d6b9fcdab60135289979e7d1c9ec79b9
+  Firebase: d99ac19b909cd2c548339c2241ecd0d1599ab02e
+  FirebaseAnalytics: 6433dfd311ba78084fc93bdfc145e8cb75740eae
+  FirebaseCore: efb3893e5b94f32b86e331e3bd6dadf18b66568e
+  FirebaseCoreInternal: 9afa45b1159304c963da48addb78275ef701c6b4
+  FirebaseInstallations: 317270fec08a5d418fdbc8429282238cab3ac843
+  GoogleAdsOnDeviceConversion: 2be6297a4f048459e0ae17fad9bfd2844e10cf64
+  GoogleAppMeasurement: 700dce7541804bec33db590a5c496b663fbe2539
+  GoogleUtilities: 00c88b9a86066ef77f0da2fab05f65d7768ed8e1
+  IronSourceAdQualitySDK: 56314ade811a5226f76dfd377bc09aca0d6610c0
+  IronSourceSDK: 66e1483cd62fb63162a965651f6f41c6b91664db
+  nanopb: fad817b59e0457d11a5dfbde799381cd727c1275
+  PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
+
+PODFILE CHECKSUM: 69234b157e98d16099067b772ad65994d5287e8f
+
+COCOAPODS: 1.16.2
