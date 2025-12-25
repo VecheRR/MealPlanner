@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAnalytics
 
 struct PlanView: View {
     @Bindable var vm: PlannerViewModel
@@ -56,6 +57,8 @@ struct PlanView: View {
                 .foregroundStyle(.secondary)
 
             Button("Find recipes") {
+                AnalyticsService.shared.recipesSearch(termsCount: meal.search_terms.count)
+                
                 selectedTerms = meal.search_terms
                 isShowingRecipes = true
             }

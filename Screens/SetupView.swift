@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+import AppMetricaCore
+import FirebaseAnalytics
+
 struct SetupView: View {
     @Bindable var vm: PlannerViewModel
 
@@ -116,6 +119,24 @@ struct SetupView: View {
 
                 Section {
                     Button {
+                        AppMetrica.reportEvent(
+                            name: "plan_generate_tap",
+                            parameters: [
+                                "days": vm.settings.days,
+                                "meals": vm.settings.mealsPerDay
+                            ]
+                        )
+                        
+                        // ✅ логируем именно "ТАП" (нажатие кнопки)
+                        let caloriesMode = (vm.settings.calories == nil) ? "auto" : "manual"
+
+                        AnalyticsService.shared.planGenerateTap(
+                            goal: vm.settings.goal.rawValue,
+                            days: vm.settings.days,
+                            mealsPerDay: vm.settings.mealsPerDay,
+                            caloriesMode: caloriesMode
+                        )
+
                         Task { await vm.generatePlan() }
                     } label: {
                         HStack {
@@ -131,6 +152,16 @@ struct SetupView: View {
                     Section("Ошибка") {
                         Text(err.localizedDescription)
                             .foregroundStyle(.red)
+                    }
+                }
+                
+                Section("Ads (debug)") {
+                    Button("Load Interstitial") {
+                        AdsManager.shared.loadInterstitial()
+                    }
+
+                    Button("Show Interstitial") {
+                        AdsManager.shared.showInterstitial()
                     }
                 }
             }

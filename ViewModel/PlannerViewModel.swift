@@ -2,8 +2,6 @@
 //  PlannerViewModel.swift
 //  MealPlanner
 //
-//  Created by  Vladislav on 20.12.2025.
-//
 
 import SwiftUI
 import Foundation
@@ -19,14 +17,11 @@ final class PlannerViewModel {
     var isLoading = false
     var appError: AppError?
 
-    // let ai = OllamaAIService()
-    // Меняем на OpenAIService
     let ai = OpenAIService()
     let mealDB = MealDBService()
     let storage = StorageService()
-    
     let liveActivity = LiveActivityManager()
-    
+
     var progressText: String = ""
     var progressValue: Double = 0
     var isGenerating = false
@@ -58,14 +53,28 @@ final class PlannerViewModel {
         f.dateFormat = "yyyy-MM-dd"
         return f.string(from: date)
     }
-    
+
     func generatePlan() async {
         appError = nil
+        let caloriesMode = (settings.calories == nil) ? "auto" : "manual"
+
+        // если уже идёт генерация — не стартуем ещё одну
+        if isLoading { return }
 
         isGenerating = true
         isLoading = true
         progressValue = 0.05
         progressText = "Подготавливаем запрос…"
+
+        // START — когда реально пошёл процесс
+        AnalyticsService.shared.planGenerateStart(
+            provider: "openai",
+            model: "gpt-4o-mini",
+            days: settings.days,
+            mealsPerDay: settings.mealsPerDay,
+            caloriesMode: caloriesMode
+        )
+
         defer {
             isLoading = false
             isGenerating = false
@@ -78,6 +87,7 @@ final class PlannerViewModel {
 
             progressValue = 0.35
             progressText = "Генерируем план через OpenAI…"
+
             let days = try await ai.generatePlan(settings: settings)
 
             progressValue = 0.70
@@ -87,6 +97,12 @@ final class PlannerViewModel {
             progressValue = 0.85
             progressText = "Сохраняем результат…"
             currentPlan = MealPlan(settings: settings, days: normalized)
+
+            let totalMeals = normalized.reduce(0) { $0 + $1.meals.count }
+            AnalyticsService.shared.planGenerateSuccess(
+                days: normalized.count,
+                totalMeals: totalMeals
+            )
 
             progressValue = 1.0
             progressText = "Готово ✅"
@@ -98,20 +114,31 @@ final class PlannerViewModel {
             progressText = "Ошибка генерации"
             progressValue = 1.0
 
+            AnalyticsService.shared.planGenerateFail(
+                stage: "openai_generate",
+                errorType: String(describing: e)
+            )
+
         } catch {
             currentPlan = nil
             appError = .network(error.localizedDescription)
             progressText = "Ошибка сети"
             progressValue = 1.0
+
+            AnalyticsService.shared.planGenerateFail(
+                stage: "unknown",
+                errorType: error.localizedDescription
+            )
         }
     }
 
     func saveCurrentToHistory() {
         guard let plan = currentPlan else { return }
-        // чтобы не плодить одинаковые — можно чекать id, но для прототипа норм
         history.insert(plan, at: 0)
+
         do {
             try storage.savePlans(history)
+            AnalyticsService.shared.planSavedToHistory(days: plan.days.count)
         } catch let e as AppError {
             appError = e
         } catch {
@@ -129,7 +156,6 @@ final class PlannerViewModel {
     }
 
     func searchRecipes(for terms: [String]) async throws -> [MealDBService.MealDBMeal] {
-        // соберём топ выдачу: по всем терминам, но без дублей
         var all: [MealDBService.MealDBMeal] = []
         var seen = Set<String>()
 
