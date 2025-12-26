@@ -103,6 +103,9 @@ final class PlannerViewModel {
                 days: normalized.count,
                 totalMeals: totalMeals
             )
+            
+            // 💰 interstitial после успеха
+            AdMobAdsManager.shared.showInterstitial()
 
             progressValue = 1.0
             progressText = "Готово ✅"

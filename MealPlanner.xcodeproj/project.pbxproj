@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		1C7BF5ABDFF0AF8AEE8EF9A8 /* Pods_MealPlannerLiveActivityExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB3A6B73678E15753605EF4 /* Pods_MealPlannerLiveActivityExtension.framework */; };
 		806702D4491DB7DB18F512E2 /* Pods_MealPlanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94BFBFC9C32804C56B8D4597 /* Pods_MealPlanner.framework */; };
-		864176AF2EFC1D5800433755 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 864176A92EFC1D5800433755 /* GoogleService-Info.plist */; };
 		864176C32EFC315C00433755 /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864176C22EFC315B00433755 /* AnalyticsService.swift */; };
 		865BB3D22EF982C500D3B785 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 865BB3D12EF982C500D3B785 /* Config.xcconfig */; };
 		865BB3D42EFA813A00D3B785 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865BB3D32EFA813400D3B785 /* HTTPClient.swift */; };
 		86E6E97A2EFD3F7500532BE2 /* AdsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E6E9792EFD3F6B00532BE2 /* AdsManager.swift */; };
+		86E6E9DA2EFEAEBD00532BE2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 86E6E9D92EFEAEBD00532BE2 /* GoogleService-Info.plist */; };
+		86E6E9F22EFEB0AD00532BE2 /* AdMobAdsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E6E9F12EFEB0AB00532BE2 /* AdMobAdsManager.swift */; };
+		86E6EA362EFED10D00532BE2 /* AdMobBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E6EA352EFED10A00532BE2 /* AdMobBannerView.swift */; };
 		86EF89D62EF6B09500E4167E /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF89CA2EF6AF8C00E4167E /* AppError.swift */; };
 		86EF89D72EF6B09A00E4167E /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF89C92EF6AF8500E4167E /* Models.swift */; };
 		86EF89D82EF6B09F00E4167E /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF89CE2EF6AFB200E4167E /* StorageService.swift */; };
@@ -66,11 +68,13 @@
 /* Begin PBXFileReference section */
 		247C32B79A2AECA6338908D3 /* Pods-MealPlanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealPlanner.release.xcconfig"; path = "Target Support Files/Pods-MealPlanner/Pods-MealPlanner.release.xcconfig"; sourceTree = "<group>"; };
 		4BB3A6B73678E15753605EF4 /* Pods_MealPlannerLiveActivityExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealPlannerLiveActivityExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		864176A92EFC1D5800433755 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		864176C22EFC315B00433755 /* AnalyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
 		865BB3D12EF982C500D3B785 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		865BB3D32EFA813400D3B785 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		86E6E9792EFD3F6B00532BE2 /* AdsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsManager.swift; sourceTree = "<group>"; };
+		86E6E9D92EFEAEBD00532BE2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		86E6E9F12EFEB0AB00532BE2 /* AdMobAdsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobAdsManager.swift; sourceTree = "<group>"; };
+		86E6EA352EFED10A00532BE2 /* AdMobBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobBannerView.swift; sourceTree = "<group>"; };
 		86EF89BA2EF6AF3800E4167E /* MealPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86EF89C92EF6AF8500E4167E /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		86EF89CA2EF6AF8C00E4167E /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
@@ -161,7 +165,7 @@
 		86EF89B12EF6AF3700E4167E = {
 			isa = PBXGroup;
 			children = (
-				864176A92EFC1D5800433755 /* GoogleService-Info.plist */,
+				86E6E9D92EFEAEBD00532BE2 /* GoogleService-Info.plist */,
 				865BB3D12EF982C500D3B785 /* Config.xcconfig */,
 				86EF8A112EF7070200E4167E /* UI */,
 				86EF89D12EF6AFD100E4167E /* Screens */,
@@ -203,6 +207,7 @@
 		86EF89CB2EF6AF9600E4167E /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				86E6E9F12EFEB0AB00532BE2 /* AdMobAdsManager.swift */,
 				86E6E9792EFD3F6B00532BE2 /* AdsManager.swift */,
 				864176C22EFC315B00433755 /* AnalyticsService.swift */,
 				865BB3D32EFA813400D3B785 /* HTTPClient.swift */,
@@ -248,6 +253,7 @@
 		86EF8A112EF7070200E4167E /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				86E6EA352EFED10A00532BE2 /* AdMobBannerView.swift */,
 				86EF8A122EF7070900E4167E /* GenerationOverlay.swift */,
 			);
 			path = UI;
@@ -357,7 +363,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				865BB3D22EF982C500D3B785 /* Config.xcconfig in Resources */,
-				864176AF2EFC1D5800433755 /* GoogleService-Info.plist in Resources */,
+				86E6E9DA2EFEAEBD00532BE2 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,13 +429,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MealPlanner/Pods-MealPlanner-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MealPlanner/Pods-MealPlanner-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -444,13 +446,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MealPlanner/Pods-MealPlanner-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MealPlanner/Pods-MealPlanner-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -478,7 +476,9 @@
 				86EF89D62EF6B09500E4167E /* AppError.swift in Sources */,
 				86EF8A132EF7072200E4167E /* GenerationOverlay.swift in Sources */,
 				864176C32EFC315C00433755 /* AnalyticsService.swift in Sources */,
+				86E6E9F22EFEB0AD00532BE2 /* AdMobAdsManager.swift in Sources */,
 				86EF89DB2EF6B0B100E4167E /* PlannerViewModel.swift in Sources */,
+				86E6EA362EFED10D00532BE2 /* AdMobBannerView.swift in Sources */,
 				86EF8A0D2EF6FC3800E4167E /* MealPlanActivityAttributes.swift in Sources */,
 				86EF89D72EF6B09A00E4167E /* Models.swift in Sources */,
 				86EF89E32EF6BB2800E4167E /* AppConfig.swift in Sources */,

@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import FirebaseAnalytics
 
 struct PlanView: View {
     @Bindable var vm: PlannerViewModel

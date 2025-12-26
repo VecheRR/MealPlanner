@@ -25,6 +25,12 @@ struct ContentView: View {
             NavigationStack { HistoryView(vm: vm) }
                 .tabItem { Label("History", systemImage: "clock") }
         }
+        .task {
+            AdMobAdsManager.shared.loadInterstitial()
+            AdMobAdsManager.shared.loadRewarded()
+            AdMobAdsManager.shared.loadRewardedInterstitial()
+            AdMobAdsManager.shared.loadAppOpen()
+        }
         .onAppear {
             // ATT лучше дергать после появления UI + с задержкой
             requestATTIfNeeded()

@@ -33,5 +33,9 @@ struct HistoryView: View {
         .toolbar {
             EditButton()
         }
+        Section {
+            AdMobBannerView(adUnitID: "ca-app-pub-3940256099942544/2934735716")
+                .frame(height: 50)
+        }
     }
 }

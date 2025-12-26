@@ -3,13 +3,12 @@ platform :ios, '18.6'
 target 'MealPlanner' do
   use_frameworks!
 
-  pod 'Firebase/Core'
   pod 'Firebase/Analytics'
-
   pod 'AppsFlyerFramework'
   pod 'AppMetricaCore'
   pod 'IronSourceSDK'
-  
+
+  pod 'Google-Mobile-Ads-SDK', '~> 11.0'
 end
 
 post_install do |installer|

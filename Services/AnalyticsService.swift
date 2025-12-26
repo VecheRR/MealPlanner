@@ -1,6 +1,7 @@
 import Foundation
 import FirebaseAnalytics
 import AppMetricaCore
+import AppsFlyerLib
 
 final class AnalyticsService {
 
@@ -10,13 +11,20 @@ final class AnalyticsService {
     // MARK: - Low level
 
     private func log(_ name: String, _ params: [String: Any] = [:]) {
-        Analytics.logEvent(name, parameters: params)
 
+        // 1) Firebase
+        Analytics.logEvent(name, parameters: params.isEmpty ? nil : params)
+
+        // 2) AppMetrica
         if params.isEmpty {
             AppMetrica.reportEvent(name: name)
         } else {
             AppMetrica.reportEvent(name: name, parameters: params)
         }
+
+        // 3) AppsFlyer (events)
+        // Важно: AppsFlyer любит [AnyHashable: Any]
+        AppsFlyerLib.shared().logEvent(name, withValues: params)
     }
 
     // MARK: - User props
@@ -33,7 +41,7 @@ final class AnalyticsService {
         ])
     }
 
-    // MARK: - Core funnel (4)
+    // MARK: - Core funnel
 
     func planGenerateTap(goal: String, days: Int, mealsPerDay: Int, caloriesMode: String) {
         log("plan_generate_tap", [
@@ -70,12 +78,10 @@ final class AnalyticsService {
         log("plan_generate_fail", params)
     }
 
-    // MARK: - History (2)
+    // MARK: - History
 
     func planSavedToHistory(days: Int) {
-        log("plan_saved_to_history", [
-            "days": days
-        ])
+        log("plan_saved_to_history", ["days": days])
     }
 
     func historyOpen(itemsCount: Int? = nil) {
@@ -84,33 +90,24 @@ final class AnalyticsService {
         log("history_open", params)
     }
 
-    // MARK: - Recipes (2)
+    // MARK: - Recipes
 
     func recipesSearch(termsCount: Int) {
-        log("recipes_search", [
-            "terms_count": termsCount
-        ])
+        log("recipes_search", ["terms_count": termsCount])
     }
 
     func recipeOpen(recipeId: String, source: String) {
-        log("recipe_open", [
-            "recipe_id": recipeId,
-            "source": source
-        ])
+        log("recipe_open", ["recipe_id": recipeId, "source": source])
     }
 
-    // MARK: - Paywall / Purchases (5) — под этап с AppHud
+    // MARK: - Paywall / Purchases
 
     func paywallShow(placement: String) {
-        log("paywall_show", [
-            "placement": placement
-        ])
+        log("paywall_show", ["placement": placement])
     }
 
     func paywallClose(placement: String) {
-        log("paywall_close", [
-            "placement": placement
-        ])
+        log("paywall_close", ["placement": placement])
     }
 
     func purchaseStart(productId: String, source: String) {
@@ -120,19 +117,30 @@ final class AnalyticsService {
         ])
     }
 
+    // ✅ Покупку тоже в AppsFlyer
     func purchaseSuccess(productId: String, price: Double? = nil, currency: String? = nil) {
-        var params: [String: Any] = [
-            "product_id": productId
-        ]
+        var params: [String: Any] = ["product_id": productId]
         if let price { params["price"] = price }
         if let currency { params["currency"] = currency }
+
         log("purchase_success", params)
     }
 
     func purchaseFail(productId: String, reason: String) {
-        log("purchase_fail", [
-            "product_id": productId,
-            "reason": reason
+        log("purchase_fail", ["product_id": productId, "reason": reason])
+    }
+    
+    // MARK: - Другое
+    func settingsOpen() {
+        log("settings_open")
+    }
+
+    func settingsSaved(goal: String, days: Int, mealsPerDay: Int, caloriesMode: String) {
+        log("settings_saved", [
+            "goal": goal,
+            "days": days,
+            "meals_per_day": mealsPerDay,
+            "calories_mode": caloriesMode
         ])
     }
 }

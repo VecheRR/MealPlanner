@@ -6,16 +6,19 @@
 //
 
 import SwiftUI
-
 import FirebaseCore
 import FirebaseAnalytics
-
 import AppMetricaCore
 import AppsFlyerLib
-
 import IronSource
+import GoogleMobileAds
 
 final class AppDelegate: NSObject, UIApplicationDelegate, AppsFlyerLibDelegate {
+    
+    internal func applicationDidBecomeActive(_ application: UIApplication) {
+        AppsFlyerLib.shared().start()
+        AdMobAdsManager.shared.showAppOpenIfReady()
+    }
 
     func application(
         _ application: UIApplication,
@@ -59,16 +62,14 @@ final class AppDelegate: NSObject, UIApplicationDelegate, AppsFlyerLibDelegate {
         if let appleAppId = Bundle.main.object(forInfoDictionaryKey: "APPLE_APP_ID") as? String {
             af.appleAppID = appleAppId
         }
+        
+        // AdMob
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
 
         af.delegate = self
         af.isDebug = true // на время отладки
 
         return true
-    }
-
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        // ✅ AppsFlyer стартуем тут
-        AppsFlyerLib.shared().start()
     }
 
     // MARK: - AppsFlyer callbacks (для проверки)
